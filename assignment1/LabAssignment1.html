@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Company Website
+        </title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script>
+            function SUBMITFORM() {
+                var name = 
+                    document.forms["RegForm"]["Name"];
+                var email = 
+                    document.forms["RegForm"]["EMail"];
+                var phone = 
+                    document.forms["RegForm"]["Telephone"];
+                var what = 
+                    document.forms["RegForm"]["Subject"];
+                var password = 
+                    document.forms["RegForm"]["Password"];
+                var address = 
+                    document.forms["RegForm"]["Address"];
+  
+                if (name.value == "") {
+                    window.alert("Please enter your name.");
+                    name.focus();
+                    return false;
+                }
+  
+                if (address.value == "") {
+                    window.alert("Please enter your address.");
+                    address.focus();
+                    return false;
+                }
+  
+                if (email.value == "") {
+                    window.alert(
+                      "Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+                }
+  
+                if (phone.value == "") {
+                    window.alert(
+                      "Please enter your telephone number.");
+                    phone.focus();
+                    return false;
+                }
+  
+                if (password.value == "") {
+                    window.alert("Please enter your password");
+                    password.focus();
+                    return false;
+                }
+  
+                if (what.selectedIndex < 1) {
+                    alert("Please enter your course.");
+                    what.focus();
+                    return false;
+                }
+  
+                return true;
+            }
+        </script>
+        <style>
+            .myDiv {
+                box-sizing: border-box;
+                width: 100%;
+                border: 2px solid white;
+                align-content: center;
+                align-items: center;
+            }
+  
+            form {
+                align-content: center;
+                align-items: center;
+                margin: 0 auto;
+                width: 500px;
+            }
+        </style>
+    </head>
+<body>
+    <!--about me page-->
+    <div class= "firdiv">
+    <p class = "inihead">Cargo Services</p>
+    <p class="secp">WE ARE THE CARGO SERVICES, A FULL-SERVICE DESIGN AND CONSULTING FIRM SPECIALIZING IN FORENSIC ARCHITECTURE, QUALITY ASSURANCE, AND EXPERT WITNESS TESTIMONY.</p>
+    <p class="norp">WE ENSURE SOUND DESIGN AND LEGAL COMPLIANCE THROUGHOUT A BUILDING'S LIFESPAN, FROM CRADLE TO GRAVE.</p>
+    <p class="norp">Email: cargoservices@gmail.com</p>
+    <p class="norp">Mobile: 1234567890</p>
+    </div>
+    <h1 style="text-align: center; color: bisque;">REGISTER FOR OUR SERVICES</h1>
+    <div class="myDiv">
+        <form name="RegForm" style="color: aliceblue;" action="/submit.php" 
+              onsubmit="return SUBMITFORM()" method="post">
+            <p>Name: <input type="text" size="65" name="Name" /></p>
+            <br />
+            <p>Address: <input type="text" size="65" name="Address" /></p>
+            <br />
+            <p>E-mail Address: <input type="text" size="65" name="EMail" /></p>
+            <br />
+            <p>Password: <input type="text" size="65" name="Password" /></p>
+            <br />
+            <p>Telephone: <input type="text" size="65" name="Telephone" /></p>
+            <br />
+            <p>
+                SELECT YOUR SERVICE
+                <select type="text" value="" name="Subject">
+                    <option>ARCHITECTURE</option>
+                    <option>PAINTING</option>
+                    <option>RECREATION</option>
+                </select>
+            </p>
+            <br />
+            <br />
+            <p>Comments: <textarea cols="55" name="Comment"> </textarea></p>
+            <p>
+                <input type="submit" value="send" name="Submit" />
+                <input type="reset" value="Reset" name="Reset" />
+            </p>
+        </form>
+    </div>
+</body>
+</html>
